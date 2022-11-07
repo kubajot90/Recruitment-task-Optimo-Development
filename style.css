@@ -1,6 +1,7 @@
 :root {
     --main-padding: 40px;
     --nav-color: rgb(239, 239, 239);
+    --orange-color:  #FBAB7E;
 }
 
 * {
@@ -24,7 +25,7 @@ body {
     align-items: center;
     padding: 0 var(--main-padding);
     width: 100%;
-    min-height: 42px;
+    min-height: 52px;
     height: auto;
     background-color: var(--nav-color);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.09);
@@ -72,7 +73,6 @@ body {
 
 .navigation__icon-strip {
     display: block;
-    /* background-color:#FBAB7E; */
     background-color:black;
     width: 30px;
     height: 5px;
@@ -86,9 +86,10 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 0 var(--main-padding);
-    background-color: #FBAB7E;
+    background-color: var(--orange-color);
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
     transform: translateY(-100%);
+    z-index: 9;
     transition: transform .3s ;
 }
 
@@ -110,30 +111,58 @@ body {
 .navigation__list--big {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    /* position: absolute; */
+    margin-top: 20%;
     list-style: none;
-}
-
-.navigation__item--big {
 }
 
 .navigation__anchore--big {
     color: white;
-    font-size: 16vh;
+    font-size: 16vw;
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
-    transition: .2s;
+    transition: .9s;
+    box-shadow: inset 0 0 0 0 var(--orange-color);
 }
 
 .navigation__anchore--big:hover {
-    text-shadow: 0 0 30px #fd5f03;
+    /* text-shadow: 0 0 30px #ff7221; */
+    color: var(--orange-color);
+    box-shadow: inset 100vw 0 0 0 white;
 }
 
 .navigation--big:target {
     transform: translateY(0);
 }
+
+.main {
+    width: 100%;
+    background-color: grey;
+}
+
+.main__squares {
+
+}
+
+.square {
+    width: 220px;
+    height: 220px;
+}
+
+.square:nth-child(1) {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    opacity: .7;
+}
+
+.square:nth-child(2) {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+}
+
 
 
 
@@ -150,6 +179,9 @@ body {
 @media (min-width: 583px){
     .navigation__list {
         display: flex;
+    }
+    .navigation__list--big {
+        display: none;
     }
 
     .navigation__icon {
