@@ -4,7 +4,6 @@
     --orange-color:  #FBAB7E;
     --square-1-padding: calc(15px - 1.5vw);
     --square-2-padding: calc(15px - .5vw);
-    --circle-center: calc(15% + 40%);
 }
 
 * {
@@ -238,6 +237,11 @@ body {
     
 }
 
+.shapes__container:hover {
+    animation: shapesHover 1.1s infinite;
+    
+}
+
 .shapes__strips {
     display: flex;
     flex-direction: column;
@@ -271,6 +275,7 @@ body {
     background-image: linear-gradient(to right, #00b4db, #0083b0);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.498);
     border:2px solid rgba(255, 255, 255, 0.52);
+    cursor: pointer;
     animation: glow 4s infinite .2s;
 }
 
@@ -302,7 +307,11 @@ body {
     background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.498);
     border:1px solid rgba(255, 255, 255, 0.52); 
+    cursor: pointer;
     animation: glow 5s infinite .1s;
+}
+.text__container:hover {
+   animation: rotateHover 2s infinite;
 }
 
 .text__p {
@@ -312,13 +321,16 @@ body {
     text-align: justify;
 }
 
+.text__p:target {
+    animation: textAnimation 4s .2s ;
+}
+
 .courtin {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* transform: translateY(-150vh); */
     z-index: 99;
     background-image: linear-gradient(to top, #1e1e1e 0%, black 100%);
     animation: slideOut .5s .5s both;
@@ -386,6 +398,30 @@ body {
     }
 }
 
+@keyframes textAnimation {
+    10% {
+        transform: scale(-50%);
+    }
+    20% {
+        transform: rotate(50vh);
+    }
+    30% {
+        transform: rotate(-50vh)
+        translateY(0);
+        letter-spacing: 0;
+    }
+    40% {
+        transform: rotate(0);
+    }
+    90% {
+        transform: translateY(100vh);
+    }
+    100% {
+        letter-spacing: 60px;
+        transform: translateY(100vh);
+    }
+}
+
 @keyframes rotateHover {
    
     10% {
@@ -404,7 +440,29 @@ body {
     60% {
         transform: rotate(0) scale(1);
     }
+    
  
+}
+
+@keyframes shapesHover {
+    0% {
+        transform: scale(1) translateX(50%);
+    }
+    20% {
+        transform: scale(1.1) translateX(50%);
+    }
+    40% {
+        transform:  scale(1) translateX(50%);
+    }
+    60% {
+        transform:scale(1.1) translateX(50%);
+    }
+    80% {
+        transform:scale(1) translateX(50%);
+    }
+    100% {
+        transform: scale(1) translateX(50%);
+    }
 }
 
 @keyframes slideOut {
