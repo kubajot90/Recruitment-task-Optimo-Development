@@ -26,6 +26,7 @@ body {
 .navigation {
     display: flex;
     align-items: center;
+    position: fixed;
     padding: 0 var(--main-padding);
     top: 0;
     left: 0;
@@ -146,6 +147,9 @@ body {
 .main {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 54px;
+    left: 0;
     padding-bottom: 6vh;
     width: 100%;
     height: 100%;
@@ -270,7 +274,7 @@ body {
 
 .text__container {
     padding: 10px;
-    margin: 6vw 5vw 0 15%;
+    margin: 6vh 5vw 0 15%;
     width: 60%;
     max-width: 258px;
     height: 50vmax;
@@ -372,7 +376,7 @@ body {
         height: 1.5vw;
     }
     .text__container {
-        margin: 6vw 3vw 5vh 5vw;
+        margin: 6vh 3vw 5vh 5vw;
         background-image: linear-gradient(to left, #fc5c7d, #6a82fb);
     }
 }
