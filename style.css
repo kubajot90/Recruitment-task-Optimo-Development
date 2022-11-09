@@ -274,6 +274,10 @@ body {
     animation: glow 4s infinite .2s;
 }
 
+.shapes__circle:target {
+    animation: circleAnimation 2s backwards .2s;
+}
+
 
 .shapes__circle:after {
     content: "";
@@ -371,6 +375,15 @@ body {
         transform: rotate(0deg) translateX(0) ;
         visibility: visible;
      }
+}
+
+@keyframes circleAnimation {
+    90% {
+        transform: translateY(80vh);
+    }
+    95% {
+        scale: 10;
+    }
 }
 
 @keyframes rotateHover {
